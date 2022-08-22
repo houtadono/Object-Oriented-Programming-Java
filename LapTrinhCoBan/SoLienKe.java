@@ -1,4 +1,4 @@
-package java_oop;
+package LapTrinhCoBan;
 import static java.lang.Math.abs;
 import java.util.Scanner;
 /**

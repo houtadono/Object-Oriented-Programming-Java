@@ -4,23 +4,23 @@ import java.util.Scanner;
  *
  * @author Houta
  */
-public class TinhSoFibonacci {
-    public static void  fibonacci(long fibo[]){
-        fibo[0] = 0;
-        fibo[1] = 1;
-        for(int i = 2;i<=92;i++){
-            fibo[i] = fibo[i-1] + fibo[i-2];
+public class SoTamPhan {
+    public static boolean check(int n){
+        while(n>0){
+            int k = n%10;
+            if(k>2) return false;
+            n/=10;
         }
+        return true;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
-        long []fibo = new long[93];
-        fibonacci(fibo);
         while(t>0){
             t--;
             int n = sc.nextInt();
-            System.out.println(fibo[n]);
+            if(check(n)) System.out.println("YES");
+            else System.out.println("NO");
         }
     }
 }

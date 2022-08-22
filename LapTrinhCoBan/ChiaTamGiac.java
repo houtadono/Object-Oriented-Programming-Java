@@ -1,4 +1,4 @@
-package java_oop;
+package LapTrinhCoBan;
 import static java.lang.Math.sqrt;
 import java.util.Scanner;
 /**

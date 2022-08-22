@@ -4,7 +4,7 @@ import java.util.Scanner;
  *
  * @author Houta
  */
-public class TinhSoFibonacci {
+public class XauNhiPhan {
     public static void  fibonacci(long fibo[]){
         fibo[0] = 0;
         fibo[1] = 1;
@@ -15,12 +15,22 @@ public class TinhSoFibonacci {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
-        long []fibo = new long[93];
+        long []fibo = new long [93];
         fibonacci(fibo);
         while(t>0){
             t--;
             int n = sc.nextInt();
-            System.out.println(fibo[n]);
+            int k = sc.nextInt();
+            while(n>2){
+                if(k>fibo[n-2]){
+                    k-=fibo[n-2];
+                    n--;
+                }else{
+                    n-=2;
+                }
+            }
+            if(n==1) System.out.println(0);
+            else System.out.println(1);
         }
     }
 }

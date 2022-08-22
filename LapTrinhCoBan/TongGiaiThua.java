@@ -1,4 +1,4 @@
-package java_oop;
+package LapTrinhCoBan;
 import java.util.Scanner;
 /**
  *
