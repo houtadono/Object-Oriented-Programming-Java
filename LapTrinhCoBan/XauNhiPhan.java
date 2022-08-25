@@ -20,7 +20,7 @@ public class XauNhiPhan {
         while(t>0){
             t--;
             int n = sc.nextInt();
-            int k = sc.nextInt();
+            long k = sc.nextLong();
             while(n>2){
                 if(k>fibo[n-2]){
                     k-=fibo[n-2];
