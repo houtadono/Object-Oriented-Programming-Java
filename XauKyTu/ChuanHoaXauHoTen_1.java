@@ -6,18 +6,12 @@ import java.util.Scanner;
  */
 public class ChuanHoaXauHoTen_1 {
     public static String chuanHoa(String s){
+        s=s.strip().toLowerCase();
+        String [] datas = s.split("\\s+");
         String res = "";
-        for(int i=1;i<s.length();i++)
-            if(Character.isLetter(s.charAt(i))&&s.charAt(i-1) == ' ' ) {
-                res+= Character.toUpperCase(s.charAt(i));
-                i++;
-                while(i<s.length()&&Character.isLetter(s.charAt(i))){
-                    res+= Character.toLowerCase(s.charAt(i));
-                    i++;
-                }
-                res+=" ";
-                i--;
-            }
+        for (String tmp : datas) {
+            res+= Character.toUpperCase(tmp.charAt(0))+tmp.substring(1)+" ";
+        }
         return res;
     }
     public static void main(String[] args) {
