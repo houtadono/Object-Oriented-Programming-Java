@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @author Houta
  */
 public class TinhLuyThua {
-    public static  long p = 100000007;
+    public static  long p = 1000000007;//10^9+7
     public  static long pow(long a,long b){
         if(b==1) return a%p;
         if(b==0) return 1;
