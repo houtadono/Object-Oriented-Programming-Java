@@ -6,7 +6,7 @@ import java.util.Scanner;
  */
 public class ChuanHoaXauHoTen_1 {
     public static String chuanHoa(String s){
-        s=s.strip().toLowerCase();
+        s=s.trim().toLowerCase();
         String [] datas = s.split("\\s+");
         String res = "";
         for (String tmp : datas) {
