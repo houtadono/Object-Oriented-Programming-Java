@@ -25,7 +25,6 @@ public class HinhVuong {
                 }
             }
             b[j]=max-min;
-            j++;
 	}
         int res = (b[1]>=b[2])? b[1]:b[2];
 	System.out.println(res*res);
