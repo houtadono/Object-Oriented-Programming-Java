@@ -23,11 +23,12 @@ public class SoUuThe {
             t--;
             String s = sc.next();
             int k = check(s);
-            switch (k) {
-                case 1 -> System.out.println("YES");
-                case 0 -> System.out.println("NO");
-                default -> System.out.println("INVALID");
+            if (k!=1)if(k==0){
+                System.out.println("NO");
+            }else System.out.println("INVALID");else {
+                System.out.println("YES");
             }
+            // can't use switch-case
         }
     }
 }
