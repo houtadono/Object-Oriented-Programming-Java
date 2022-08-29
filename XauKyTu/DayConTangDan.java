@@ -42,7 +42,8 @@ public class DayConTangDan {
                 arr[i] = sc.nextInt();
             backtracking(0);
             Collections.sort(result);
-            System.out.print(result);
+            for(String s: result)
+                System.out.println(s);
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(DayConTangDan.class.getName()).log(Level.SEVERE, null, ex);
