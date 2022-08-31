@@ -37,8 +37,6 @@ public class KhaiBaoLopThiSinh {
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
         System.out.println(new ThiSinh(sc.nextLine(),sc.next(),sc.nextFloat(),
-                    sc.nextFloat(),sc.nextFloat()
-            ).toString()
-        );
+                    sc.nextFloat(),sc.nextFloat() ) );
     }
 }

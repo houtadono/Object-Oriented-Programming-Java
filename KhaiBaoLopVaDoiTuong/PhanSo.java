@@ -25,10 +25,6 @@ class Fraction{
         return a+b;
     }
     
-    @Override
-    public String toString(){
-        return Long.toString(this.numerator)+ '/' + Long.toString(this.denominator) ;
-    }
     Fraction add(Fraction p){
         long numera = this.numerator*p.denominator + this.denominator*p.numerator;
         long denomina = this.denominator*p.denominator;
@@ -39,10 +35,15 @@ class Fraction{
         long denomina = p1.denominator*p2.denominator;
         return new Fraction(numera,denomina);
     }
+    
+    @Override
+    public String toString(){
+        return Long.toString(this.numerator)+ '/' + Long.toString(this.denominator) ;
+    }
 }
 public class PhanSo {
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
-        System.out.println(new Fraction(sc.nextLong(),sc.nextLong()).toString());
+        System.out.println(new Fraction(sc.nextLong(),sc.nextLong()));
     }
 }

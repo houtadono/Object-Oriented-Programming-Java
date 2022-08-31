@@ -42,6 +42,6 @@ public class KhaiBaoLopNhanVien {
         String address = sc.nextLine();
         String tax = sc.next();
         String signD = sc.next();
-        System.out.println(new NhanVien(name,sex,bd,address,tax,signD).toString());
+        System.out.println(new NhanVien(name,sex,bd,address,tax,signD));
     }
 }

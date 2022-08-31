@@ -46,6 +46,6 @@ public class TongPhanSo {
         Scanner sc = new Scanner(System.in);
         Fraction p = new Fraction(sc.nextLong(),sc.nextLong());
         Fraction q = new Fraction(sc.nextLong(),sc.nextLong());
-        System.out.println(p.add(q).toString());
+        System.out.println(p.add(q));
     }
 }

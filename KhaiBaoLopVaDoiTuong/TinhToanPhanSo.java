@@ -38,7 +38,7 @@ class Fraction{
     
     @Override
     public String toString(){
-        return Long.toString(this.numerator)+ '/' + Long.toString(this.denominator) ;
+        return Long.toString(this.numerator)+ '/' + Long.toString(this.denominator)+' ' ;
     }
 }
 
@@ -52,7 +52,8 @@ public class TinhToanPhanSo {
             Fraction c = a.add(b);
             c = c.mul(c);
             Fraction d = a.mul(b).mul(c);
-            System.out.println(c.toString()+' '+d.toString());
+            System.out.print(c);
+            System.out.println(d);
         }    
     }
 }
