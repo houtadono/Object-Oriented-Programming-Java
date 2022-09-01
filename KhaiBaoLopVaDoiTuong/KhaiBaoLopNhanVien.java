@@ -11,20 +11,17 @@ class NhanVien{
         this.id = "00001";
         this.name = name;
         this.sex = sex;
-        this.birthday = standardizationOfDate(birthday);
+        this.birthday = standardDay(birthday);
         this.address = address;
         this.taxCode = taxCode;
-        this.signDay = standardizationOfDate(signDay);
+        this.signDay = standardDay(signDay);
     }
     
-    static String standardizationOfDate(String day){
-        String []s = day.split("/");
-        day = "";
-        if(s[0].length()==1) s[0] = '0' + s[0];
-        if(s[1].length()==1) s[1] = '0' + s[1];
-        if(s[2].length()==2) s[2] = "20" + s[2];
-        for(String i:s) day+= i+"/";
-        return day;
+    static String standardDay(String s){
+        String []data = s.split("/");
+        if(data[0].length()==1) data[0] = '0' + data[0];
+        if(data[1].length()==1) data[1] = '0' + data[1];
+        return data[0]+'/'+data[1]+'/'+data[2];
     }
     
     @Override
