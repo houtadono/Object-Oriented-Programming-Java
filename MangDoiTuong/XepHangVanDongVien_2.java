@@ -1,14 +1,12 @@
 package MangDoiTuong;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 /**
  *
  * @author Houta
  */
-public class XepHangVanDongVien_1 {
+public class XepHangVanDongVien_2 {
     static int stt = 1;
     private static class VanDongVien implements Comparable<VanDongVien>{
         private String id,name,birthDay,timeStart,timeEnd;
@@ -69,19 +67,13 @@ public class XepHangVanDongVien_1 {
             sc.nextLine();
             ds.add(new VanDongVien(sc));
         }
-        ArrayList<VanDongVien> tmp = (ArrayList<VanDongVien>) ds.clone();
-        Collections.sort(tmp);
-        Map map = new HashMap();
-        map.put(tmp.get(0).id, 1);
-        for(int i = 1;i<tmp.size();i++){
-            if(tmp.get(i).result==tmp.get(i-1).result)
-                map.put(tmp.get(i).id, map.get(tmp.get(i-1).id));
-            else
-                map.put(tmp.get(i).id, i+1);
-        }
-        for(VanDongVien i: ds){
-            i.xepHang = (int) map.get(i.id);
-            System.out.println(i);
+        Collections.sort(ds);
+        ds.get(0).xepHang = 1;
+        System.out.println(ds.get(0));
+        for(int i = 1;i<ds.size();i++){
+            if(ds.get(i).result == ds.get(i-1).result) ds.get(i).xepHang = ds.get(i-1).xepHang;
+            else ds.get(i).xepHang = i+1;
+            System.out.println(ds.get(i));
         } 
     }
 }
