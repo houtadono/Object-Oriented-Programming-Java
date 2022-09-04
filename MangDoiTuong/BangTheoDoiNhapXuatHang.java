@@ -13,8 +13,8 @@ public class BangTheoDoiNhapXuatHang {
         MaHang(Scanner sc){
             this.id = sc.next();
             this.slNhap = sc.nextLong();
-            if(this.id.startsWith("A")) this.slXuat = Math.round(this.slNhap*6/10);
-            if(this.id.startsWith("B")) this.slXuat = Math.round(this.slNhap*7/10);
+            if(this.id.startsWith("A")) this.slXuat = Math.round(this.slNhap*6/10.0);
+            if(this.id.startsWith("B")) this.slXuat = Math.round(this.slNhap*7/10.0);
             
             if(this.id.endsWith("Y")) this.donGia = 110000;
             if(this.id.endsWith("N")) this.donGia = 135000;
