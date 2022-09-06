@@ -1,12 +1,10 @@
 package MangDoiTuong;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 /**
  *
  * @author Houta
  */
-
 public class DienTichDaGiac {
     private static class Point{
         private double x;
@@ -17,13 +15,10 @@ public class DienTichDaGiac {
             this.y=y;
         }
         static double dtichDaGiac(ArrayList<Point> daGiac,int n){
-            double res = daGiac.get(n-1).x*daGiac.get(0).y;
+            double res = daGiac.get(n-1).x*daGiac.get(0).y - daGiac.get(n-1).y*daGiac.get(0).x;
             for(int i = 0;i<n-1;i++)
-                res += daGiac.get(i).x*daGiac.get(i+1).y;
-            res -= daGiac.get(n-1).y*daGiac.get(0).x;
-            for(int i = 0;i<n-1;i++)
-                res -= daGiac.get(i).y*daGiac.get(i+1).x;
-            return res/2;
+                res += daGiac.get(i).x*daGiac.get(i+1).y - daGiac.get(i).y*daGiac.get(i+1).x;         
+            return Math.abs(res)/2;
         }
     }
     
@@ -36,7 +31,7 @@ public class DienTichDaGiac {
             for(int i = 0;i<n;i++){
                 daGiac.add(new Point(sc.nextDouble(),sc.nextDouble()));
             }
-            System.out.printf("%.4f\n",Point.dtichDaGiac(daGiac,n));
+            System.out.printf("%.3f\n",Point.dtichDaGiac(daGiac,n));
         }
     }  
 }

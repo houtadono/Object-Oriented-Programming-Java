@@ -23,7 +23,7 @@ public class TinhToanGiaBan {
                 this.thue = this.tienHang*10/100.0;
                 this.ship = this.tienHang*3/100.0;
             }
-            else if(this.id.startsWith("T")){
+            else if(this.id.startsWith("D")){
                 this.thue = this.tienHang*8/100.0;
                 this.ship = this.tienHang*2.5/100.0;
             }else{

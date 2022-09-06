@@ -22,22 +22,19 @@ public class DanhSachDoiTuongSinhVien_1 {
             if(data[1].length()==1) data[1] = '0' + data[1];
             return data[0]+'/'+data[1]+'/'+data[2];
         }
-        public static double standardGpa(double f){
-            return (double) Math.round(f*100) / 100;
-        }
         
         public SinhVien(Scanner sc) {
             this.id = getId(stt++);
             this.name = sc.nextLine();
             this.clas = sc.next();
             this.birthday = standardDay(sc.next());
-            this.gpa = standardGpa(sc.nextDouble());
+            this.gpa = sc.nextDouble();
         }
         
         @Override
         public String toString(){
             return this.id+' '+this.name+' '+this.clas
-                    +' '+this.birthday+' '+String.valueOf(this.gpa);
+                    +' '+this.birthday+' '+String.format("%.2f",this.gpa);
         }
     }
     public static void main(String []args){

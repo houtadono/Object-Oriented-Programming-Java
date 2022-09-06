@@ -11,6 +11,14 @@ public class DanhSachDoiTuongSinhVien_2 {
         private String id,name,clas,birthday;
         private double gpa;
         
+        public SinhVien(Scanner sc) {
+            this.id = getId(stt++);
+            this.name = standardName(sc.nextLine());
+            this.clas = sc.next();
+            this.birthday = standardDay(sc.next());
+            this.gpa = sc.nextDouble();
+        }
+        
         public static String getId(int n){
             String s = String.valueOf(n);
             while(s.length()<3) s = '0'+s;
@@ -33,22 +41,11 @@ public class DanhSachDoiTuongSinhVien_2 {
             if(data[1].length()==1) data[1] = '0' + data[1];
             return data[0]+'/'+data[1]+'/'+data[2];
         }
-        public static double standardGpa(double f){
-            return (double) Math.round(f*100) / 100;
-        }
-        
-        public SinhVien(Scanner sc) {
-            this.id = getId(stt++);
-            this.name = standardName(sc.nextLine());
-            this.clas = sc.next();
-            this.birthday = standardDay(sc.next());
-            this.gpa = standardGpa(sc.nextDouble());
-        }
         
         @Override
         public String toString(){
             return this.id+' '+this.name+' '+this.clas
-                    +' '+this.birthday+' '+String.valueOf(this.gpa);
+                    +' '+this.birthday+' '+String.format("%.2f",this.gpa);
         }
     }
     public static void main(String []args){

@@ -1,7 +1,9 @@
 package MangDoiTuong;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.sql.Date;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 /**
  *
@@ -13,9 +15,9 @@ public class HoaDonKhachSan {
         private String id,name;
         private int room,unitPrice;
         private String dayIn,dayOut;
-        private int serviceFee,day,pay;
+        private long serviceFee,day,pay;
 
-        public KhachHang(String name, int room, String dayIn, String dayOut, int serviceFee) {
+        public KhachHang(String name, int room, String dayIn, String dayOut, long serviceFee) {
             this.id = getId(stt++); 
             this.name = name;
             this.room = room;
@@ -39,12 +41,13 @@ public class HoaDonKhachSan {
             if(k==3) return 50;
             return 80;
         }
-        static int getDay(String dayIn,String dayOut){
+        static long getDay(String dayIn,String dayOut){
             String []dataIn = dayIn.split("/");
-            Date in = Date.valueOf(dataIn[2]+'-'+dataIn[1]+'-'+dataIn[0]);
             String []dataOut = dayOut.split("/");
-            Date out = Date.valueOf(dataOut[2]+'-'+dataOut[1]+'-'+dataOut[0]);
-            return (int) ((out.getTime() - in.getTime())/(24 * 3600 * 1000)+1);
+            LocalDate d1 = LocalDate.parse(dataIn[2]+'-'+dataIn[1]+'-'+dataIn[0], DateTimeFormatter.ISO_LOCAL_DATE);
+            LocalDate d2 = LocalDate.parse(dataOut[2]+'-'+dataOut[1]+'-'+dataOut[0], DateTimeFormatter.ISO_LOCAL_DATE);
+            Duration diff = Duration.between(d1.atStartOfDay(), d2.atStartOfDay());
+            return diff.toDays() + 1;
         }
 
         @Override
