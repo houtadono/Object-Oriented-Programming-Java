@@ -10,9 +10,9 @@ public class HoaDonTienNuoc {
     static int stt = 1;
     private static class KhachHang implements Comparable<KhachHang>{
         private String id,name;
-        private int oldNum,newNum,pay;
+        private long oldNum,newNum,pay;
 
-        public KhachHang(String name, int oldNum, int newNum) {
+        public KhachHang(String name, long oldNum, long newNum) {
             this.id = getId(stt++); 
             this.name = name;
             this.oldNum = oldNum;
@@ -25,17 +25,17 @@ public class HoaDonTienNuoc {
             if(s.length()==1) s = '0'+s;
             return "KH"+s;
         }
-        static int getPay(int n){
-            int res = 0;
+        static long getPay(long n){
+            long res = 0;
             if(n>50){
                 res = 50*100;
                 if(n>100){
                     res += 50*150;
                     res +=  (n-100)*200;
-                    res = (int) res*105/100;
+                    res = Math.round(res*1.05);
                 }else{
                     res += (n-50)*150;
-                    res = (int) res*103/100;
+                    res = Math.round(res*1.03);
                 }
             }else{
                 res = n*102;
