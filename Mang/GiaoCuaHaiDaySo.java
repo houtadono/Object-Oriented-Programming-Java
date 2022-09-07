@@ -1,6 +1,6 @@
 package Mang;
 import java.util.Scanner;
-import java.util.Arrays;
+import java.util.TreeSet;
 /**
  *
  * @author Houta
@@ -10,25 +10,19 @@ public class GiaoCuaHaiDaySo {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
-        int a[] = new int [m];
-        int b[] = new int [n];
+        TreeSet<Integer> tree1 = new TreeSet<>();
+        TreeSet<Integer> tree = new TreeSet<>();
         for(int i = 0; i<m ;i++)
-            a[i] = sc.nextInt();
-        for(int i = 0; i<n ;i++)
-            b[i] = sc.nextInt();
-        Arrays.sort(a);
-        Arrays.sort(b);
-        int i=0,j=0;
-        while(i<a.length && j<b.length){
-            if(a[i] ==b[j]){
-                System.out.print(a[i]+" ");
-                i++;
-                j++;
-            }else if(a[i]>b[j]){
-                j++;
-            }else{
-                i++;
-            }
+            tree1.add(sc.nextInt());
+        for(int i = 0; i<n ;i++){
+            int x = sc.nextInt();
+            for(int j : tree1)
+                if(j==x){
+                    tree.add(j);
+                }else if(j>x) break;
+        }
+        for(int i : tree){
+            System.out.printf("%d ",i);
         }
     }
 }
