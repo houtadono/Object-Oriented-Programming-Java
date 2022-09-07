@@ -2,8 +2,6 @@
 <h4>Code WA : Unedited </h4>
 <ul> 
 <li> DÃY CON LIÊN TIẾP TỔNG BẰNG K</li>
-<li> GIAO CỦA HAI DÃY SỐ </li>
-<li> HỢP CỦA HAI DÃY SỐ </li>
 <li> LOẠI BỎ “100”</li>
 <li> TÁCH ĐÔI VÀ TÍNH TỔNG</li>
 <li> XÂU ĐỐI XỨNG</li>
