@@ -20,17 +20,14 @@ class ThiSinh{
     
     static String standardizationOfBirthDate(String birthday){
         String []s = birthday.split("/");
-        birthday = "";
         if(s[0].length()==1) s[0] = '0' + s[0];
         if(s[1].length()==1) s[1] = '0' + s[1];
-        if(s[2].length()==2) s[2] = "20" + s[2];
-        for(String i:s) birthday+= i+"/";
-        return birthday;
+        return s[0]+'/'+s[1]+'/'+s[2];
     }
     
     @Override
     public String toString(){
-        return this.name + ' ' + this.birthday +' ' + Float.toString(this.totalScores);
+        return this.name + ' ' + this.birthday +' ' + String.format("%.1f", this.totalScores);
     }
 }
 public class KhaiBaoLopThiSinh {
