@@ -1,9 +1,7 @@
 package MangDoiTuong;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-
 /**
  *
  * @author Houta
@@ -17,10 +15,13 @@ public class BangDiemHocSinh {
         HocSinh(Scanner sc){
             this.id = getId(stt++);
             this.name = sc.nextLine();
-            for(int i =0; i<10; i++) this.score[i] = sc.nextDouble();
-            this.totalScore = 2*(this.score[0]+this.score[1]);
-            for(int i =2; i<10; i++) this.totalScore += this.score[i];
+            for(int i =0; i<10; i++){
+                this.score[i] = sc.nextDouble();
+                this.totalScore += this.score[i]; 
+            }
+            this.totalScore += this.score[0]+this.score[1];
             this.totalScore /= 12;
+            this.totalScore = (double) Math.round(this.totalScore*10)/10;
             if(this.totalScore >= 9) this.type = "XUAT SAC";
             else if(this.totalScore >= 8) this.type = "GIOI";
             else if(this.totalScore >= 7) this.type = "KHA";
@@ -36,7 +37,8 @@ public class BangDiemHocSinh {
         @Override
         public int compareTo(HocSinh o) {
             if(this.totalScore<o.totalScore) return 1;
-            return -1;
+            if(this.totalScore>o.totalScore) return -1;
+            return this.id.compareTo(o.id);
         }
     }
     public static void main(String []args){
