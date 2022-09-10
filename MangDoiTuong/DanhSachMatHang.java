@@ -43,6 +43,6 @@ public class DanhSachMatHang {
         }
         Collections.sort(ds);
         for(MatHang tmp : ds)
-            System.out.printf("%s %s %s %d %d %d\n",tmp.id,tmp.name,tmp.donVi,tmp.giaBan,tmp.giaMua,tmp.loiNhuan);
+            System.out.printf("%s %s %s %d %d %d\n",tmp.id,tmp.name,tmp.donVi,tmp.giaMua,tmp.giaBan,tmp.loiNhuan);
     }
 }
