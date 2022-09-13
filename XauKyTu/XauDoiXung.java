@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class XauDoiXung {
     public static boolean check(String s){
         int dem = 0;
-        for(int i=0;i<=s.length()/2;i++)
+        for(int i=0;i<s.length()/2;i++)
             if(s.charAt(i)!=s.charAt(s.length()-i-1))
                 dem++;
         return dem==1||dem==0&&s.length()%2==1;
