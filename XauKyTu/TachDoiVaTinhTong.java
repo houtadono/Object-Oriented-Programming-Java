@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class TachDoiVaTinhTong {
     public static void main(String []args){
         try {
-                Scanner sc = new Scanner(new File("Data.in"));
+                Scanner sc = new Scanner(new File("DATA.in"));
                 String s = "";
                 if (sc.hasNextLine())  s= sc.nextLine();
                 while(s.length()>1){
