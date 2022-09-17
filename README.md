@@ -4,18 +4,17 @@
 <li> .....</li>
 </ul> 
 
-<h4>How to read commit: (day 1: 22/08/2022) (last commit: day 25: 15/09/2022)</h4>
+<h4>How to read commit: (day 1: 22/08/2022) (last commit: day 27: 17/09/2022)</h4>
 <ul> 
-<li>-day x: the date the code was committed and code is definitely correct for the test suite, maybe not AC</li>
-<li>-update code AC day x: old code is wrong and fixed some parts, sure AC</li>
-<li>-Optimize code day x: old code may be correct but not optimized and fixed in a more optimal way, sure AC</li>
+<li>day x: ngày commit sau khi học java được x ngày</li>
+<li>update code AC day x: code trước đây sai🥲, và giờ thì ok(‾◡◝)</li>
 </ul>
 
-<h4>Lưu ý:(Cách đọc git):></h4>
+<h4>Lưu ý:(Cách đọc git:>)</h4>
 <ul> 
 <li> Mỗi folder bên trên (tên Chủ đề con Code.ptit) là một package đều thuộc 1 Source Package trong cùng 1 Project Java</li>
 <li> Mỗi bài là 1 file .java </li>
-<li> Những commit ngày đầu trông đần hơn=))</li>
+<li> Những commit ngày đầu trông đần hơn=)) sau sẽ sửa dần</li>
 </ul>
 
 <h4>Lưu ý:(Khi code😢)</h4>
