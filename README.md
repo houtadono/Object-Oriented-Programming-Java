@@ -4,7 +4,7 @@
 <li> .....</li>
 </ul> 
 
-<h4>How to read commit: (day 1: 22/08/2022) (last commit: day 27: 17/09/2022)</h4>
+<h4>How to read commit: (day 1: 22/08/2022) (last commit: day 28: 18/09/2022)</h4>
 <ul> 
 <li>day x: ngày commit sau khi học java được x ngày</li>
 <li>update code AC day x: code trước đây sai🥲, và giờ thì ok(‾◡◝)</li>
