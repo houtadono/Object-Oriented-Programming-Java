@@ -4,11 +4,7 @@
 <li> .....</li>
 </ul> 
 
-<h4>How to read commit: (day 1: 22/08/2022) (last commit: day 28: 18/09/2022)</h4>
-<ul> 
-<li>day x: ngày commit sau khi học java được x ngày</li>
-<li>update code AC day x: code trước đây sai🥲, và giờ thì ok(‾◡◝)</li>
-</ul>
+#### If you have any problem with these codes, please leave a question at <a href="https://github.com/houtadono/java_oop_code-ptit/issues">here </a> <br> or you can contact message  <a href="http://m.me/houtazzz"> my messager </a>
 
 <h4>Lưu ý:(Cách đọc git:>)</h4>
 <ul> 
@@ -31,3 +27,5 @@
     <br>Ở đây mình ghi hết các class vào 1 file có main:> cho dễ nộp bài</li>
 <li> More</li>
 </ul>
+
+#### Can u give me a Star
