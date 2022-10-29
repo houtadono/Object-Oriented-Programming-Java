@@ -34,7 +34,7 @@ public class LietKeSinhVienTheoKhoa {
             String year = sc.next();
             System.out.printf("DANH SACH SINH VIEN KHOA %s:\n",year);
             for(SinhVien tmp : ds)
-                if(tmp.id.substring(1,3).contentEquals(year.substring(2)))
+                if(tmp.clas.substring(1,3).contentEquals(year.substring(2)))
                     System.out.println(tmp);
         }
     }

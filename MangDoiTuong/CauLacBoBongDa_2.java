@@ -7,40 +7,6 @@ import java.util.Scanner;
  * @author Houta
  */
 public class CauLacBoBongDa_2 {
-    private static class CLB {
-        private String idCLB,name;
-        private int giaVe;
-        
-        public CLB(String idCLB, String name, int giaVe) {
-            this.idCLB = idCLB;
-            this.name = name;
-            this.giaVe = giaVe;
-        }
-    }
-    private static class TranDau implements Comparable<TranDau>{
-        private String id;
-        private CLB clb ;
-        private long soVe,doanhThu;
-
-        TranDau(String id, long soVe, ArrayList<CLB> dsCLB) {
-            this.id = id;
-            this.soVe = soVe;
-            for(CLB tmp : dsCLB) 
-                if(this.id.substring(1,3).contentEquals(tmp.idCLB)){
-                    this.clb = tmp;
-                    break;
-                }
-            this.doanhThu = this.clb.giaVe*this.soVe;
-        }
-
-        @Override
-        public int compareTo(TranDau o) {
-            if(this.doanhThu < o.doanhThu) return 1;
-            if(this.doanhThu > o.doanhThu) return -1;
-            return this.clb.name.compareTo(o.clb.name);
-        }
-        
-    }
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt(); 
@@ -54,6 +20,44 @@ public class CauLacBoBongDa_2 {
         while(t-->0) dsTD.add(new TranDau(sc.next(),sc.nextLong(),dsCLB));
         Collections.sort(dsTD);
         for(TranDau tmp : dsTD)
-            System.out.printf("%s %s %d\n",tmp.id,tmp.clb.name,tmp.doanhThu);   
+            System.out.println(tmp);   
+    }
+}
+
+class CLB {
+    protected String idCLB,nameCLB;
+    protected int giaVe;
+
+    public CLB(String idCLB, String name, int giaVe) {
+        this.idCLB = idCLB;
+        this.nameCLB = name;
+        this.giaVe = giaVe;
+    }
+}
+class TranDau implements Comparable<TranDau>{
+    private String id;
+    private long soVe, doanhThu;
+    private CLB clb;
+    TranDau(String id, long soVe, ArrayList<CLB> dsCLB) {
+        this.id = id;
+        this.soVe = soVe;
+        for(CLB tmp : dsCLB) 
+            if(this.id.substring(1,3).contentEquals(tmp.idCLB)){
+                this.clb = tmp;
+                break;
+            }
+        this.doanhThu = this.clb.giaVe*this.soVe;
+    }
+
+    @Override
+    public int compareTo(TranDau o) {
+        if(this.doanhThu < o.doanhThu) return 1;
+        if(this.doanhThu > o.doanhThu) return -1;
+        return this.clb.nameCLB.compareTo(o.clb.nameCLB);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %d",id,clb.nameCLB,doanhThu);
     }
 }

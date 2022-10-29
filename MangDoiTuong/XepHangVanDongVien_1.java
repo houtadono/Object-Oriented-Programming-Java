@@ -71,7 +71,7 @@ public class XepHangVanDongVien_1 {
         }
         ArrayList<VanDongVien> tmp = (ArrayList<VanDongVien>) ds.clone();
         Collections.sort(tmp);
-        Map map = new HashMap();
+        Map<String, Integer> map = new HashMap<String, Integer>();
         map.put(tmp.get(0).id, 1);
         for(int i = 1;i<tmp.size();i++){
             if(tmp.get(i).result==tmp.get(i-1).result)
