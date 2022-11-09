@@ -7,25 +7,6 @@ import java.util.Scanner;
  * @author Houta
  */
 public class LopHocPhan_2 {
-    private static class LopHocPhan implements Comparable<LopHocPhan>{
-        private String id,tenNhom,sttNhom,tenGiangVien;
-
-        public LopHocPhan(Scanner sc) {
-            this.id = sc.next();
-            sc.nextLine();
-            this.tenNhom = sc.nextLine();
-            this.sttNhom = sc.next();
-            sc.nextLine();
-            this.tenGiangVien = sc.nextLine();
-        }
-
-        @Override
-        public int compareTo(LopHocPhan o) {
-            if(this.id.contentEquals(o.id))
-                return this.sttNhom.compareTo(o.sttNhom);
-            return this.id.compareTo(o.id);
-        }
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
@@ -39,13 +20,42 @@ public class LopHocPhan_2 {
             String name = sc.nextLine();
             boolean check = false;
             for(LopHocPhan tmp : ds)
-                if(tmp.tenGiangVien.contains(name)){
+                if(tmp.getTenGiangVien().contains(name)){
                     if(!check){
                         check = true;
                         System.out.printf("Danh sach cho giang vien %s:\n",name);
                     }
-                    System.out.printf("%s %s %s\n",tmp.id,tmp.tenNhom,tmp.sttNhom);
+                    System.out.println(tmp);
                 }
         }
+    }
+}
+
+class LopHocPhan implements Comparable<LopHocPhan>{
+    private String id,tenNhom,sttNhom,tenGiangVien;
+
+    public LopHocPhan(Scanner sc) {
+        this.id = sc.next();
+        sc.nextLine();
+        this.tenNhom = sc.nextLine();
+        this.sttNhom = sc.next();
+        sc.nextLine();
+        this.tenGiangVien = sc.nextLine();
+    }
+    
+    public String getTenGiangVien() {
+        return tenGiangVien;
+    }
+    
+    @Override
+    public int compareTo(LopHocPhan o) {
+        if(this.id.contentEquals(o.id))
+            return this.sttNhom.compareTo(o.sttNhom);
+        return this.id.compareTo(o.id);
+    }
+
+    @Override
+    public String toString(){
+        return id+' '+tenNhom+' '+sttNhom;
     }
 }
